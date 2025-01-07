@@ -3,9 +3,9 @@ import 'package:roots/core/constants.dart';
 import '../classes/custom_button_class.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.details, required this.onTap});
-  Function() onTap;
-  CustomButtonClass details;
+  const CustomButton({super.key, required this.details, required this.onTap});
+  final Function() onTap;
+  final CustomButtonClass details;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
