@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roots/core/widgets/custom_button.dart';
 import '../../../../core/constants/colors.dart';
+import '../../../authentication/presentation/pages/log_in_page.dart';
 import '../widgets/landing_decoration.dart';
 
 class LandingPage extends StatelessWidget {
@@ -21,7 +22,10 @@ class LandingPage extends StatelessWidget {
           CustomButton(
             buttonText: 'Sign In',
             textColor: Colors.black,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LogInPage()));
+            },
             borderColor: kprimaryColor,
           ),
           SizedBox(
