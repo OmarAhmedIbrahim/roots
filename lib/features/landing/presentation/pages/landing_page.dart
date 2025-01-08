@@ -14,19 +14,25 @@ class LandingPage extends StatelessWidget {
       body: Column(
         children: [
           LandingDecoration(),
-          CustomButton(
-              buttonText: 'Sign up',
-              textColor: Colors.white,
-              buttonColor: kprimaryColor,
-              onTap: () {}),
-          CustomButton(
-            buttonText: 'Sign In',
-            textColor: Colors.black,
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LogInPage()));
-            },
-            borderColor: kprimaryColor,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomButton(
+                buttonText: 'Sign up',
+                textColor: Colors.white,
+                buttonColor: kprimaryColor,
+                onTap: () {}),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomButton(
+              buttonText: 'Sign In',
+              textColor: Colors.black,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LogInPage()));
+              },
+              borderColor: kprimaryColor,
+            ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.17,
