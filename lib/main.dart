@@ -12,7 +12,7 @@ class RootsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LandingPage(),
+      home: const LandingPage(),
     );
   }
 }
