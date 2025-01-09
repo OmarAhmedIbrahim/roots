@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:roots/core/constants/images.dart';
-import 'package:roots/features/landing/presentation/widgets/landing_decoration.dart';
 
 import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/images.dart';
 import '../../../../core/widgets/custom_back_button.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_divider_with_text.dart';
 import '../../../../core/widgets/custom_text_form_field_prefix_icon.dart';
 import '../../../../core/widgets/custom_text_from_field.dart';
+import '../../../landing/presentation/widgets/landing_decoration.dart';
 import '../widgets/direct_authentication_widget.dart';
 
-class LogInPage extends StatelessWidget {
-  const LogInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +27,26 @@ class LogInPage extends StatelessWidget {
               CustomBackButton(width: width, height: height),
               Image.asset(krootsLogo),
               Text(
-                'Login to your account',
+                'Create your account',
                 style: primaryTextStyle,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15.0, bottom: 8),
                 child: CustomTextFormField(
-                  hintText: 'Email',
+                  hintText: 'Full name',
                   onSubmitted: (value) {},
+                  prefixIcon: CustomTextFormFieldPrefixIcon(
+                    icon: Icons.person,
+                    iconColor: Colors.white,
+                    backgroundColor: kprimaryColor,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: CustomTextFormField(
+                  onSubmitted: (value) {},
+                  hintText: 'Email',
                   prefixIcon: CustomTextFormFieldPrefixIcon(
                     icon: Icons.email,
                     iconColor: Colors.white,
@@ -54,17 +66,15 @@ class LogInPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: kprimaryColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
-                    ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: CustomTextFormField(
+                  onSubmitted: (value) {},
+                  hintText: 'Confirm Password',
+                  prefixIcon: CustomTextFormFieldPrefixIcon(
+                    icon: Icons.lock,
+                    iconColor: Colors.white,
+                    backgroundColor: kprimaryColor,
                   ),
                 ),
               ),
@@ -73,7 +83,7 @@ class LogInPage extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {},
-                buttonText: 'Login',
+                buttonText: 'Register',
                 buttonColor: kprimaryColor,
                 borderRaduis: 30,
                 textVerticalPadding: 10,
@@ -82,7 +92,7 @@ class LogInPage extends StatelessWidget {
                 height: 30,
               ),
               CustomDividerWithText(
-                dividerText: 'Or Login with',
+                dividerText: 'Or register with',
               ),
               SizedBox(
                 height: 20,
@@ -104,21 +114,6 @@ class LogInPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Don’t have an account? '),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: kprimaryColor,
-                      ),
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),

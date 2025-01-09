@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roots/core/widgets/custom_button.dart';
+import 'package:roots/features/authentication/presentation/pages/sign_up_page.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../authentication/presentation/pages/log_in_page.dart';
 import '../widgets/landing_decoration.dart';
@@ -20,7 +21,10 @@ class LandingPage extends StatelessWidget {
                 buttonText: 'Sign up',
                 textColor: Colors.white,
                 buttonColor: kprimaryColor,
-                onTap: () {}),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUpPage()));
+                }),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
