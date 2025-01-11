@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 
 class Validator {
-
-  String? emailValidator (String? value){
+  // Used static so that we don't need to create an object of the class
+  static String? emailValidator (String? value){
+    // if the value is null the condition will return true
     if (value?.isEmpty ?? true) {
       return 'This field is empty ';
     }
@@ -14,11 +14,11 @@ class Validator {
     return null; // Input is valid
   }
 
-   String? passwordValidator (String? value){
+   static String? passwordValidator (String? value){
     if (value?.isEmpty ?? true) {
       return 'This field is empty ';
     }
-    final passwordRegex = RegExp(
+    final  passwordRegex = RegExp(
         r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$');
     if (!passwordRegex.hasMatch(value!)) {
       return 'Weak Password it must be 8+ characters, with uppercase, lowercase, number, and special character.';
@@ -26,7 +26,7 @@ class Validator {
     return null; // Input is valid
   }
 
-  static String? confirmPasswordValidator(String?value , String password){
+   static String? confirmPasswordValidator(String?value , String password){
     if (value?.isEmpty ?? true) {
       return 'This field is empty ';
     }

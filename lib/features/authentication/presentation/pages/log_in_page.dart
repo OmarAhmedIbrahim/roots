@@ -6,7 +6,7 @@ import 'package:roots/features/landing/presentation/widgets/landing_decoration.d
 import '../../../../core/constants/colors.dart';
 import '../../../../core/widgets/custom_back_button.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/custom_divider_with_text.dart';
+import '../widgets/custom_divider_with_text.dart';
 import '../../../../core/widgets/custom_text_form_field_prefix_icon.dart';
 import '../../../../core/widgets/custom_text_from_field.dart';
 import '../../domain/entities/validator.dart';
@@ -15,8 +15,6 @@ import '../widgets/direct_authentication_widget.dart';
 class LogInPage extends StatelessWidget {
   LogInPage({super.key});
   final GlobalKey<FormState> formKey = GlobalKey();
-  final Validator validator = Validator();
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,11 @@ class LogInPage extends StatelessWidget {
       body: Form(
         key: formKey,
         child: Padding(
-          padding: const EdgeInsets.only(top: 50.0, left: 20, right: 20),
+          padding: EdgeInsets.only(
+            top: height * 0.05,
+            left: width * 0.05,
+            right: 20,
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -40,7 +42,7 @@ class LogInPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 8),
                   child: CustomTextFormField(
-                    validator: validator.emailValidator,
+                    validator: Validator.emailValidator,
                     hintText: 'Email',
                     onSubmitted: (value) {},
                     prefixIcon: CustomTextFormFieldPrefixIcon(
@@ -53,7 +55,7 @@ class LogInPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
-                    validator: validator.passwordValidator,
+                    validator: Validator.passwordValidator,
                     onSubmitted: (value) {},
                     hintText: 'Password',
                     prefixIcon: CustomTextFormFieldPrefixIcon(

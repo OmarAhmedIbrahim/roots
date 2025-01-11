@@ -7,7 +7,7 @@ import '../../../../core/constants/images.dart';
 TextStyle primaryTextStyle = TextStyle(
   fontFamily: kfontFamily,
   fontWeight: FontWeight.w700,
-  fontSize: 16,
+  fontSize: 18,
 );
 TextStyle hintTextStyle = TextStyle(
     fontFamily: kfontFamily,

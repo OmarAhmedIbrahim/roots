@@ -5,7 +5,7 @@ import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
 import '../../../../core/widgets/custom_back_button.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/custom_divider_with_text.dart';
+import '../widgets/custom_divider_with_text.dart';
 import '../../../../core/widgets/custom_text_form_field_prefix_icon.dart';
 import '../../../../core/widgets/custom_text_from_field.dart';
 import '../../../landing/presentation/widgets/landing_decoration.dart';
@@ -15,7 +15,6 @@ class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
   final GlobalKey<FormState> formKey = GlobalKey();
   final TextEditingController passwordController = TextEditingController();
-  final Validator validator = Validator();
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +25,15 @@ class SignUpPage extends StatelessWidget {
       body: Form(
         key: formKey,
         child: Padding(
-          padding: const EdgeInsets.only(top: 50.0, left: 20, right: 20),
+        padding: EdgeInsets.only(
+        top: height * 0.05,
+        left: width * 0.05,
+        right: 20,),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 CustomBackButton(width: width, height: height),
-                Image.asset(krootsLogo),
+                 Image.asset(krootsLogo),
                 Text(
                   'Create your account',
                   style: primaryTextStyle,
@@ -51,7 +53,7 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
-                    validator: validator.emailValidator,
+                    validator: Validator.emailValidator,
                     onSubmitted: (value) {
                     },
                     hintText: 'Email',
@@ -66,7 +68,7 @@ class SignUpPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
                     controller: passwordController,
-                    validator: validator.passwordValidator,
+                    validator: Validator.passwordValidator,
                     onSubmitted: (value) {},
                     hintText: 'Password',
                     prefixIcon: CustomTextFormFieldPrefixIcon(
