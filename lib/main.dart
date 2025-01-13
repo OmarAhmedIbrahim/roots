@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roots/features/authentication/presentation/pages/choosing_campus_page.dart';
 import 'package:roots/features/landing/presentation/pages/landing_page.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class RootsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LandingPage(),
+      home: const ChoosingCampusPage(),
     );
   }
 }

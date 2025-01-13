@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roots/features/authentication/domain/entities/validator.dart';
+import 'package:roots/features/authentication/presentation/pages/choosing_campus_page.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
@@ -97,7 +98,10 @@ class SignUpPage extends StatelessWidget {
                 ),
                 CustomButton(
                   onTap: () {
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+                      // If the registration process is done successfully
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ChoosingCampusPage()));
+                    }
                   },
                   buttonText: 'Register',
                   buttonColor: kprimaryColor,

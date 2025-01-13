@@ -13,11 +13,6 @@ class CustomTextFormFieldPrefixIcon extends StatelessWidget {
       child: Container(
         width: 50,
         height: 55,
-        child: Center(
-            child: Icon(
-              icon,
-              color: iconColor,
-            )),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.only(
@@ -25,6 +20,11 @@ class CustomTextFormFieldPrefixIcon extends StatelessWidget {
             bottomLeft: Radius.circular(10),
           ),
         ),
+        child: Center(
+            child: Icon(
+              icon,
+              color: iconColor,
+            )),
       ),
     );
   }
