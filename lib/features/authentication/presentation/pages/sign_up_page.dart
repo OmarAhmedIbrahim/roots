@@ -4,12 +4,12 @@ import 'package:roots/features/authentication/presentation/pages/choosing_campus
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
+import '../../../../core/themes/text_themes.dart';
 import '../../../../core/widgets/custom_back_button.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../widgets/custom_divider_with_text.dart';
 import '../../../../core/widgets/custom_text_form_field_prefix_icon.dart';
 import '../../../../core/widgets/custom_text_from_field.dart';
-import '../../../landing/presentation/widgets/landing_decoration.dart';
 import '../widgets/direct_authentication_widget.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -37,7 +37,7 @@ class SignUpPage extends StatelessWidget {
                  Image.asset(krootsLogo),
                 Text(
                   'Create your account',
-                  style: primaryTextStyle,
+                  style: AppTextStyles.primaryTextStyle,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 8),

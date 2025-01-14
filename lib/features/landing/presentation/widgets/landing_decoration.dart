@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:roots/core/constants/colors.dart';
-import '../../../../core/constants/fonts.dart';
+import 'package:roots/core/themes/text_themes.dart';
 import '../../../../core/constants/images.dart';
 
-TextStyle primaryTextStyle = TextStyle(
-  fontFamily: kfontFamily,
-  fontWeight: FontWeight.w700,
-  fontSize: 18,
-);
-TextStyle hintTextStyle = TextStyle(
-    fontFamily: kfontFamily,
-    fontWeight: FontWeight.w400,
-    fontSize: 14,
-    color: khintColor);
+
 
 class LandingDecoration extends StatelessWidget {
   const LandingDecoration({
@@ -49,7 +39,7 @@ class LandingDecoration extends StatelessWidget {
             top: height * 0.43,
             left: width * 0.25,
             child: Text('Connect with Roots like \n       never before!',
-                style: primaryTextStyle),
+                style: AppTextStyles.primaryTextStyle),
           ),
           Positioned(
             top: height * 0.38,

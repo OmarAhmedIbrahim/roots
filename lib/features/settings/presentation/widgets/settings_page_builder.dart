@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../landing/presentation/widgets/landing_decoration.dart';
+import '../../../../core/themes/text_themes.dart';
 
 class SettingsPageBuilder extends StatelessWidget {
   const SettingsPageBuilder({
@@ -23,7 +23,7 @@ class SettingsPageBuilder extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: Text(
               text,
-              style: primaryTextStyle,
+              style: AppTextStyles.primaryTextStyle,
             ),
           ),
           Icon(icon)

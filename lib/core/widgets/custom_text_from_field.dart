@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../features/landing/presentation/widgets/landing_decoration.dart';
+import 'package:roots/core/themes/text_themes.dart';
 import 'custom_text_form_field_prefix_icon.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -38,7 +38,7 @@ class CustomTextFormField extends StatelessWidget {
           errorMaxLines: 2,
           prefixIcon: prefixIcon,
           hintText: hintText,
-          hintStyle: hintTextStyle,
+          hintStyle: AppTextStyles.hintTextStyle,
           fillColor: Colors.white,
           filled: true,
           border: OutlineInputBorder(

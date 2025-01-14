@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:roots/core/constants/images.dart';
 import 'package:roots/features/authentication/presentation/pages/sign_up_page.dart';
-import 'package:roots/features/landing/presentation/widgets/landing_decoration.dart';
 
 import '../../../../core/constants/colors.dart';
+import '../../../../core/themes/text_themes.dart';
 import '../../../../core/widgets/custom_back_button.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../widgets/custom_divider_with_text.dart';
@@ -37,7 +37,7 @@ class LogInPage extends StatelessWidget {
                 Image.asset(krootsLogo),
                 Text(
                   'Login to your account',
-                  style: primaryTextStyle,
+                  style: AppTextStyles.primaryTextStyle,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 8),
