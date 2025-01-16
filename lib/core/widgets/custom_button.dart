@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import '../constants/fonts.dart';
+import '../themes/text_themes.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {super.key,
-      required this.onTap,
-      required this.buttonText,
-      this.textColor,
-      this.buttonColor,
-      this.borderColor,
-      this.borderRaduis, this.textVerticalPadding});
+  const CustomButton({
+    super.key,
+    required this.onTap,
+    required this.buttonText,
+    this.textColor,
+    this.buttonColor,
+    this.borderColor,
+    this.borderRadius,
+    this.textVerticalPadding,
+  });
   final Function() onTap;
   final String buttonText;
   final Color? textColor;
   final Color? buttonColor;
   final Color? borderColor;
-  final double? borderRaduis;
+  final double? borderRadius;
   final double? textVerticalPadding;
 
   @override
@@ -29,17 +31,18 @@ class CustomButton extends StatelessWidget {
               color: borderColor ?? Colors.white,
               width: 2,
             ),
-            borderRadius: BorderRadius.circular(borderRaduis ?? 60),
+            borderRadius: BorderRadius.circular(borderRadius ?? 60),
             color: buttonColor ?? Colors.white),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical:textVerticalPadding?? 20.0),
+            padding:
+                EdgeInsets.symmetric(vertical: textVerticalPadding ?? 20.0),
             child: Text(
               buttonText,
               style: TextStyle(
                 fontSize: 16,
                 color: textColor ?? Colors.white,
-                fontFamily: kfontFamily,
+                fontFamily: AppTextStyles.kfontFamily,
                 fontWeight: FontWeight.w700,
               ),
             ),

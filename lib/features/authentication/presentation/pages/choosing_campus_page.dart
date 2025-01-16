@@ -1,10 +1,8 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:roots/core/constants/colors.dart';
 import 'package:roots/core/constants/images.dart';
 import 'package:roots/core/widgets/custom_back_button.dart';
-import 'package:roots/core/widgets/custom_text_form_field_prefix_icon.dart';
 
 import '../widgets/custom_dropdown_menu.dart';
 
@@ -35,12 +33,13 @@ class _ChoosingCampusPageState extends State<ChoosingCampusPage> {
       ),
       child: Column(
         children: [
-          CustomBackButton(width: width, height: height),
-          Image.asset(krootsLogo),
+          CustomBackButton(
+            backButtonColor: kprimaryColor,
+          ),
+          Image.asset(AppImages.krootsLogo),
           CustomDropDownMenu(dropdownList: campusList),
         ],
       ),
     ));
   }
 }
-

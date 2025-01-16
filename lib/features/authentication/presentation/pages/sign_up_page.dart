@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roots/features/authentication/domain/entities/validator.dart';
 import 'package:roots/features/authentication/presentation/pages/choosing_campus_page.dart';
-
+import '../../../../core/app_paddings.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
 import '../../../../core/themes/text_themes.dart';
@@ -19,22 +19,26 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    AppPaddings pagePadding =
+        AppPaddings(width: screenWidth, height: screenHeight);
 
     return Scaffold(
       body: Form(
         key: formKey,
         child: Padding(
-        padding: EdgeInsets.only(
-        top: height * 0.05,
-        left: width * 0.05,
-        right: 20,),
+          padding: pagePadding.appPagePadding,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CustomBackButton(width: width, height: height),
-                 Image.asset(krootsLogo),
+                CustomBackButton(
+                  backButtonColor: kprimaryColor,
+                ),
+                SizedBox(
+                    width: screenWidth * 0.5,
+                    height: screenHeight * 0.23,
+                    child: Image.asset(AppImages.krootsLogo)),
                 Text(
                   'Create your account',
                   style: AppTextStyles.primaryTextStyle,
@@ -42,7 +46,9 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 8),
                   child: CustomTextFormField(
+                    elevation: 10,
                     hintText: 'Full name',
+                    validator: Validator.filledValidator,
                     onSubmitted: (value) {},
                     prefixIcon: CustomTextFormFieldPrefixIcon(
                       icon: Icons.person,
@@ -54,9 +60,9 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
+                    elevation: 10,
                     validator: Validator.emailValidator,
-                    onSubmitted: (value) {
-                    },
+                    onSubmitted: (value) {},
                     hintText: 'Email',
                     prefixIcon: CustomTextFormFieldPrefixIcon(
                       icon: Icons.email,
@@ -68,6 +74,7 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
+                    elevation: 10,
                     controller: passwordController,
                     validator: Validator.passwordValidator,
                     onSubmitted: (value) {},
@@ -82,9 +89,10 @@ class SignUpPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: CustomTextFormField(
+                    elevation: 10,
                     validator: (value) => Validator.confirmPasswordValidator(
                         value, passwordController.text),
-                  onSubmitted: (value) {},
+                    onSubmitted: (value) {},
                     hintText: 'Confirm Password',
                     prefixIcon: CustomTextFormFieldPrefixIcon(
                       icon: Icons.lock,
@@ -100,13 +108,16 @@ class SignUpPage extends StatelessWidget {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       // If the registration process is done successfully
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ChoosingCampusPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ChoosingCampusPage()));
                     }
                   },
                   buttonText: 'Register',
                   buttonColor: kprimaryColor,
-                  borderRaduis: 30,
-                  textVerticalPadding: 10,
+                  borderRadius: 30,
+                  textVerticalPadding: 12,
                 ),
                 SizedBox(
                   height: 30,
@@ -121,19 +132,37 @@ class SignUpPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     DirectAuthenticationWidget(
-                      image: kgoogleLogo,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChoosingCampusPage()));
+                      },
+                      image: AppImages.kgoogleLogo,
                     ),
                     DirectAuthenticationWidget(
-                      image: kfacbookLogo,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChoosingCampusPage()));
+                      },
+                      image: AppImages.kfacbookLogo,
                     ),
                     DirectAuthenticationWidget(
-                      image: kxLogo,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChoosingCampusPage()));
+                      },
+                      image: AppImages.kxLogo,
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 20,
-                ),
+                  height: 30,
+                )
               ],
             ),
           ),

@@ -1,39 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:roots/core/constants/colors.dart';
-import 'package:roots/core/constants/fonts.dart';
 import 'package:roots/core/constants/images.dart';
+import 'package:roots/core/themes/text_themes.dart';
 import 'package:roots/features/settings/presentation/widgets/settings_page_builder.dart';
 
-import '../../../landing/presentation/widgets/landing_decoration.dart';
+import '../../../../core/app_paddings.dart';
+
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    AppPaddings pagePadding =
+    AppPaddings(width: screenWidth, height: screenHeight);
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(
-          top: height * 0.05,
-          left: width * 0.05,
-          right: width * 0.05,
-        ),
+        padding: pagePadding.appPagePadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: width * 0.3,
-              height: height * 0.12,
+            SizedBox(
+              width: screenWidth * 0.3,
+              height: screenHeight * 0.12,
               child: Image.asset(
-                krootsLogo,
+                AppImages.krootsLogo,
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: height * 0.05),
+              padding: EdgeInsets.only(top: screenHeight * 0.05),
               child: SettingsPageBuilder(
                 text: 'Profile',
                 icon: Iconsax.user,
@@ -61,7 +60,7 @@ class SettingsPage extends StatelessWidget {
               onTap: (){},
             ),
             SizedBox(
-              height: height * 0.05,
+              height: screenHeight * 0.05,
             ),
             GestureDetector(
               onTap: (){},
@@ -70,7 +69,7 @@ class SettingsPage extends StatelessWidget {
                 style: TextStyle(
                     color: kprimaryColor,
                     fontSize: 20,
-                    fontFamily: kfontFamily,
+                    fontFamily: AppTextStyles.kfontFamily,
                     fontWeight: FontWeight.bold),
               ),
             )
@@ -81,19 +80,3 @@ class SettingsPage extends StatelessWidget {
   }
 }
 
-// Icon(
-// Iconsax.book_1,
-// color: Colors.black,
-// ),
-// Icon(
-// Iconsax.card,
-// color: Colors.black,
-// ),
-// Icon(
-// Iconsax.bank,
-// color: Colors.black,
-// ),
-// Icon(
-// Iconsax.notification,
-// color: Colors.black,
-// ),

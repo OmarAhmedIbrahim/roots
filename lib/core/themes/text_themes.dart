@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../constants/colors.dart';
-import '../constants/fonts.dart';
+
 class AppTextStyles {
+  static const String kfontFamily = 'Poppins';
+
   static const TextStyle hintTextStyle = TextStyle(
       fontFamily: kfontFamily,
       fontWeight: FontWeight.w400,
