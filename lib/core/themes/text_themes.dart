@@ -11,7 +11,7 @@ class AppTextStyles {
       color: khintColor);
   static const TextStyle primaryTextStyle = TextStyle(
     fontFamily: kfontFamily,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
     fontSize: 18,
   );
 

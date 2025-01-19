@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:roots/core/constants/colors.dart';
-import 'package:roots/core/widgets/custom_button.dart';
+
+import '../../../../core/constants/colors.dart';
 import '../../../../core/themes/text_themes.dart';
+import '../../../../core/widgets/custom_button.dart';
 import '../widgets/custom_dropdown_menu.dart';
 
-class ChoosingCampusPage extends StatefulWidget {
-  const ChoosingCampusPage({super.key , required this.buttonFunction});
-final  Function() buttonFunction;
+class ChoosingGender extends StatefulWidget {
+  const ChoosingGender({super.key, required this.buttonFunction});
 
   @override
-  State<ChoosingCampusPage> createState() => _ChoosingCampusPageState();
+  State<ChoosingGender> createState() => _ChoosingGenderState();
+  final Function() buttonFunction;
 }
 
-class _ChoosingCampusPageState extends State<ChoosingCampusPage> {
+class _ChoosingGenderState extends State<ChoosingGender> {
   bool isButtonEnabled = false;
   PageController pageController = PageController();
-  final List campusList = ['aaaa', 'ab', 'ac', 'd'];
+  final List genderList = ['Male', "Female"];
   String? selectedValue;
   TextEditingController controller = TextEditingController();
   @override
@@ -24,14 +25,17 @@ class _ChoosingCampusPageState extends State<ChoosingCampusPage> {
     return Scaffold(
         body: Column(
       children: [
+        SizedBox(
+          height: 20,
+        ),
         Text(
-          '  Please select your  \n  preferred campus',
+          '  What is your gender ?',
           style: AppTextStyles.primaryTextStyle,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
+          padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: CustomDropDownMenu(
-            dropdownList: campusList,
+            dropdownList: genderList,
             onSelected: (value) {
               setState(() {
                 isButtonEnabled = true;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roots/features/authentication/domain/entities/validator.dart';
 import 'package:roots/features/authentication/presentation/pages/choosing_campus_page.dart';
+import 'package:roots/features/authentication/presentation/pages/further_info_handler.dart';
 import '../../../../core/app_paddings.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
@@ -111,7 +112,7 @@ class SignUpPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ChoosingCampusPage()));
+                              builder: (context) => FurtherInfoHandler()));
                     }
                   },
                   buttonText: 'Register',
@@ -136,7 +137,7 @@ class SignUpPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ChoosingCampusPage()));
+                                builder: (context) => FurtherInfoHandler()));
                       },
                       image: AppImages.kgoogleLogo,
                     ),
@@ -145,7 +146,7 @@ class SignUpPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ChoosingCampusPage()));
+                                builder: (context) => FurtherInfoHandler()));
                       },
                       image: AppImages.kfacbookLogo,
                     ),
@@ -154,7 +155,7 @@ class SignUpPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ChoosingCampusPage()));
+                                builder: (context) => FurtherInfoHandler()));
                       },
                       image: AppImages.kxLogo,
                     ),
