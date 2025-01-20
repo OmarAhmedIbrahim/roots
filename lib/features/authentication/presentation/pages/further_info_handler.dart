@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:roots/core/themes/text_themes.dart';
 import 'package:roots/features/authentication/presentation/pages/choosing_campus_page.dart';
 import 'package:roots/features/authentication/presentation/pages/choosing_gender.dart';
-
 import '../../../../core/app_paddings.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
 import '../../../../core/widgets/custom_back_button.dart';
+import '../../../../core/widgets/page_indicator.dart';
 
 class FurtherInfoHandler extends StatefulWidget {
   const FurtherInfoHandler({super.key});
@@ -18,7 +17,7 @@ class FurtherInfoHandler extends StatefulWidget {
 class _FurtherInfoHandlerState extends State<FurtherInfoHandler> {
   PageController pageController = PageController(initialPage: 0);
   int pageNumber = 0;
-  double currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -36,25 +35,9 @@ class _FurtherInfoHandlerState extends State<FurtherInfoHandler> {
             Expanded(
               child: Stack(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      2,
-                      (index) => Padding(
-                        padding:
-                            const EdgeInsets.only(top: 8.0, bottom: 8, left: 5),
-                        child: AnimatedContainer(
-                          duration: Duration(milliseconds: 500),
-                          height: 5,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: index == pageNumber
-                                ? kprimaryColor
-                                : kfadedPrimaryColor,
-                          ),
-                        ),
-                      ),
-                    ),
+                  PageIndicator(
+                    pageNumber: pageNumber,
+                    numberOfIndicators: 2,
                   ),
                   Positioned(
                     top: screenHeight * 0.05,
@@ -79,11 +62,9 @@ class _FurtherInfoHandlerState extends State<FurtherInfoHandler> {
                         children: [
                           ChoosingCampusPage(buttonFunction: () {
                             setState(() {
-                              //print('lol');
                               pageController.animateToPage(1,
                                   duration: Duration(milliseconds: 500),
                                   curve: Curves.easeIn);
-                              //pageController.jumpTo(1);
                             });
                           }),
                           ChoosingGender(

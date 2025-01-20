@@ -14,5 +14,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 18,
   );
+  static const TextStyle largeTextStyle = TextStyle(
+    fontFamily: kfontFamily,
+    fontWeight: FontWeight.w600,
+    fontSize: 30,
+    color: Colors.white,
+  );
 
 }
